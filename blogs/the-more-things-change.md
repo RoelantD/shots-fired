@@ -1,7 +1,7 @@
 ---
 title: The More Things Change
-author: Stuart van der Lee
-authorSlug: stuart
+author: Roelant Dieben
+authorSlug: roelant
 date: 2026-03-01
 excerpt: AI is rewriting the rules of software development — or is it? A look at the fundamentals that never go out of style.
 tags: ai, engineering, software development

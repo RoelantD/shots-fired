@@ -1,9 +1,9 @@
 ---
-title: Cloud Is Just Someone Else's Computer
-author: Roelant Dieben
-authorSlug: roelant
+title: Stuart Is Typing…
+author: Stuart van der Lee
+authorSlug: stuart
 date: 2026-03-15
-excerpt: The dismissive joke became the industry's most expensive misunderstanding. A decade of cloud architecture work, distilled.
+excerpt: Stuart has a lot of thoughts about cloud. He will share them very soon. Any minute now. We are all waiting.
 tags: cloud, architecture, azure
 ---
 
