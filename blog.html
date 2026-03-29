@@ -393,16 +393,32 @@
       return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
-    function avatarHtml(slug, name) {
-      if (AVATAR[slug]) {
-        return `<img class="post-author-avatar" src="${AVATAR[slug]}" alt="${name}"
+    function avatarHtml(authorSlug, author) {
+      if (AVATAR[authorSlug]) {
+        return `<img class="post-author-avatar" src="${AVATAR[authorSlug]}" alt="${author}"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <span class="post-author-avatar-fallback" style="display:none">${INITIALS[slug] || '?'}</span>`;
+                <span class="post-author-avatar-fallback" style="display:none">${INITIALS[authorSlug] || '?'}</span>`;
       }
-      return `<span class="post-author-avatar-fallback">${INITIALS[slug] || '?'}</span>`;
+      return `<span class="post-author-avatar-fallback">${INITIALS[authorSlug] || '?'}</span>`;
     }
 
-    // Transform blockquotes into styled pull quotes (post-processing, version-agnostic)
+    // Parse YAML frontmatter from a markdown string.
+    // Returns { meta: { title, author, authorSlug, date, excerpt, tags }, body: '...' }
+    function parseFrontmatter(text) {
+      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+      if (!match) return { meta: {}, body: text };
+      const meta = {};
+      match[1].split('\n').forEach(line => {
+        const colon = line.indexOf(':');
+        if (colon === -1) return;
+        const key   = line.slice(0, colon).trim();
+        const value = line.slice(colon + 1).trim().replace(/^["']|["']$/g, '');
+        if (key) meta[key] = value;
+      });
+      return { meta, body: match[2] };
+    }
+
+    // Transform blockquotes into styled pull quotes
     function applyPullQuotes(html) {
       return html.replace(
         /<blockquote>\s*<p>([\s\S]*?)<\/p>\s*<\/blockquote>/g,
@@ -410,12 +426,9 @@
       );
     }
 
-    function renderArticle(post, markdown) {
-      // Strip the H1 from the markdown (we render it from metadata)
-      const withoutH1 = markdown.replace(/^#\s+.+\n?/, '');
-
-      const rawHtml   = marked.parse(withoutH1);
-      const postHtml  = applyPullQuotes(rawHtml);
+    function renderArticle(slug, meta, body) {
+      const rawHtml  = marked.parse(body);
+      const postHtml = applyPullQuotes(rawHtml);
 
       const container = document.getElementById('article-container');
       container.innerHTML = `
@@ -428,13 +441,13 @@
 
         <header class="post-header">
           <div class="post-meta">
-            ${avatarHtml(post.authorSlug, post.author)}
+            ${avatarHtml(meta.authorSlug, meta.author)}
             <div class="post-meta-text">
-              <span class="post-author-name">${post.author}</span>
-              <span class="post-date">${formatDate(post.date)}</span>
+              <span class="post-author-name">${meta.author || 'Unknown'}</span>
+              <span class="post-date">${meta.date ? formatDate(meta.date) : ''}</span>
             </div>
           </div>
-          <h1 class="post-title">${post.title}</h1>
+          <h1 class="post-title">${meta.title || slug}</h1>
         </header>
 
         <hr class="post-divider">
@@ -442,8 +455,7 @@
         <div class="post-body">${postHtml}</div>
       `;
 
-      // Update page title
-      document.title = `${post.title} — Shots Fired`;
+      document.title = `${meta.title || slug} — Shots Fired`;
     }
 
     function showError(msg) {
@@ -451,28 +463,24 @@
         `<p class="post-loading">${msg}</p>`;
     }
 
-    // Parse ?slug= from URL
+    // Parse ?slug= from URL, fetch the single markdown file, parse frontmatter
     const slug = new URLSearchParams(window.location.search).get('slug');
     if (!slug) {
       showError('No post specified. <a href="blogs.html" style="color:var(--accent)">View all posts →</a>');
     } else {
-      // Fetch metadata + markdown in parallel
-      Promise.all([
-        fetch('blogs.json').then(r => r.json()),
-        fetch(`blogs/${slug}.md`).then(r => {
+      fetch(`blogs/${slug}.md`)
+        .then(r => {
           if (!r.ok) throw new Error('Post not found');
           return r.text();
         })
-      ])
-      .then(([posts, markdown]) => {
-        const post = posts.find(p => p.slug === slug);
-        if (!post) throw new Error('Post metadata not found');
-        renderArticle(post, markdown);
-      })
-      .catch(err => {
-        showError(`Could not load this post. ${err.message || ''}<br>
-          <a href="blogs.html" style="color:var(--accent);font-size:0.85rem">← Back to all posts</a>`);
-      });
+        .then(text => {
+          const { meta, body } = parseFrontmatter(text);
+          renderArticle(slug, meta, body);
+        })
+        .catch(err => {
+          showError(`Could not load this post. ${err.message || ''}<br>
+            <a href="blogs.html" style="color:var(--accent);font-size:0.85rem">← Back to all posts</a>`);
+        });
     }
   </script>
 

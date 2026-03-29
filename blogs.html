@@ -391,51 +391,89 @@
   </footer>
 
   <script>
-    const AVATAR = { roelant: 'image/roelant.jpg', stuart: 'image/stuart.jpg' };
+    const AVATAR   = { roelant: 'image/roelant.jpg', stuart: 'image/stuart.jpg' };
     const INITIALS = { roelant: 'RD', stuart: 'SL' };
 
     function formatDate(iso) {
       return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
-    function avatarHtml(slug, name) {
-      if (AVATAR[slug]) {
-        return `<img class="blog-author-avatar" src="${AVATAR[slug]}" alt="${name}"
+    function avatarHtml(authorSlug, author) {
+      if (AVATAR[authorSlug]) {
+        return `<img class="blog-author-avatar" src="${AVATAR[authorSlug]}" alt="${author}"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <span class="blog-author-avatar-fallback" style="display:none">${INITIALS[slug] || '?'}</span>`;
+                <span class="blog-author-avatar-fallback" style="display:none">${INITIALS[authorSlug] || '?'}</span>`;
       }
-      return `<span class="blog-author-avatar-fallback">${INITIALS[slug] || '?'}</span>`;
+      return `<span class="blog-author-avatar-fallback">${INITIALS[authorSlug] || '?'}</span>`;
     }
 
+    // Parse YAML frontmatter from a markdown string.
+    // Returns { meta: { title, author, authorSlug, date, excerpt, tags }, body: '...' }
+    function parseFrontmatter(text) {
+      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+      if (!match) return { meta: {}, body: text };
+      const meta = {};
+      match[1].split('\n').forEach(line => {
+        const colon = line.indexOf(':');
+        if (colon === -1) return;
+        const key   = line.slice(0, colon).trim();
+        const value = line.slice(colon + 1).trim().replace(/^["']|["']$/g, '');
+        if (key) meta[key] = value;
+      });
+      return { meta, body: match[2] };
+    }
+
+    // blogs.json is now just a slug manifest: ["slug-one", "slug-two", ...]
     fetch('blogs.json')
       .then(r => r.json())
-      .then(posts => {
+      .then(slugs => {
         const grid = document.getElementById('blog-grid');
-        if (!posts.length) {
+        if (!slugs.length) {
           grid.innerHTML = '<p class="blog-empty">No posts yet. Check back soon.</p>';
           return;
         }
-        grid.innerHTML = posts.map((post, i) => `
-          <a href="blog.html?slug=${post.slug}" class="blog-card reveal" style="transition-delay:${i * 0.1}s">
-            <div class="blog-card-meta">
-              ${avatarHtml(post.authorSlug, post.author)}
-              <div class="blog-meta-text">
-                <span class="blog-author-name">${post.author}</span>
-                <span class="blog-date">${formatDate(post.date)}</span>
-              </div>
-            </div>
-            <h2 class="blog-card-title">${post.title}</h2>
-            <p class="blog-card-excerpt">${post.excerpt}</p>
-            <span class="blog-read-more">Read article →</span>
-          </a>
-        `).join('');
 
-        // Scroll reveal
-        const observer = new IntersectionObserver(
-          entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-          { threshold: 0.1 }
-        );
-        grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        // Fetch every markdown file in parallel, parse its frontmatter
+        return Promise.all(
+          slugs.map(slug =>
+            fetch(`blogs/${slug}.md`)
+              .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+              .then(text => ({ slug, ...parseFrontmatter(text).meta }))
+              .catch(() => null)
+          )
+        ).then(posts => {
+          // Drop any failed fetches, then sort newest-first
+          const valid = posts
+            .filter(Boolean)
+            .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          if (!valid.length) {
+            grid.innerHTML = '<p class="blog-empty">No posts found.</p>';
+            return;
+          }
+
+          grid.innerHTML = valid.map((post, i) => `
+            <a href="blog.html?slug=${post.slug}" class="blog-card reveal" style="transition-delay:${i * 0.1}s">
+              <div class="blog-card-meta">
+                ${avatarHtml(post.authorSlug, post.author)}
+                <div class="blog-meta-text">
+                  <span class="blog-author-name">${post.author || 'Unknown'}</span>
+                  <span class="blog-date">${post.date ? formatDate(post.date) : ''}</span>
+                </div>
+              </div>
+              <h2 class="blog-card-title">${post.title || post.slug}</h2>
+              <p class="blog-card-excerpt">${post.excerpt || ''}</p>
+              <span class="blog-read-more">Read article →</span>
+            </a>
+          `).join('');
+
+          // Scroll reveal
+          const observer = new IntersectionObserver(
+            entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+            { threshold: 0.1 }
+          );
+          grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
       })
       .catch(() => {
         document.getElementById('blog-grid').innerHTML =

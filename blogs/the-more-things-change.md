@@ -1,4 +1,11 @@
-# The More Things Change
+---
+title: The More Things Change
+author: Stuart van der Lee
+authorSlug: stuart
+date: 2026-03-01
+excerpt: AI is rewriting the rules of software development — or is it? A look at the fundamentals that never go out of style.
+tags: ai, engineering, software development
+---
 
 There is a particular kind of excitement in our industry right now. Every week brings a new model, a new agent framework, a new way to generate code, automate pipelines, or summarize documentation. It is thrilling. It is also, at times, deeply disorienting.
 

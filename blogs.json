@@ -1,18 +1,4 @@
 [
-  {
-    "slug": "cloud-is-just-someones-computer",
-    "title": "Cloud Is Just Someone Else's Computer",
-    "author": "Roelant Dieben",
-    "authorSlug": "roelant",
-    "date": "2026-03-15",
-    "excerpt": "The dismissive joke became the industry's most expensive misunderstanding. A decade of cloud architecture work, distilled."
-  },
-  {
-    "slug": "the-more-things-change",
-    "title": "The More Things Change",
-    "author": "Stuart van der Lee",
-    "authorSlug": "stuart",
-    "date": "2026-03-01",
-    "excerpt": "AI is rewriting the rules of software development — or is it? A look at the fundamentals that never go out of style."
-  }
+  "cloud-is-just-someones-computer",
+  "the-more-things-change"
 ]

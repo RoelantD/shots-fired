@@ -1,4 +1,11 @@
-# Cloud Is Just Someone Else's Computer
+---
+title: Cloud Is Just Someone Else's Computer
+author: Roelant Dieben
+authorSlug: roelant
+date: 2026-03-15
+excerpt: The dismissive joke became the industry's most expensive misunderstanding. A decade of cloud architecture work, distilled.
+tags: cloud, architecture, azure
+---
 
 There was a time when that sentence was a joke. You would see it on a t-shirt at a conference, printed under a cartoon of a server rack with a smiley face. It was the kind of thing a sceptic said when they wanted to dismiss the hype. Fair enough — the hype deserved some scepticism. But somewhere along the way, the joke became the most expensive misunderstanding in enterprise IT history.
 
