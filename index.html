@@ -461,6 +461,23 @@
 
     .host-social-link .fab { font-size: 1.35rem; line-height: 1; }
 
+    .host-profile-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: gap 0.2s;
+    }
+
+    .host-profile-link:hover { gap: 0.7rem; }
+
+
     .host-mvp-row {
       display: flex;
       gap: 0.5rem;
@@ -1076,6 +1093,7 @@
             <img src="image/MVP.svg" alt="MVP" width="22" height="22">
           </span>
         </div>
+        <a href="/host/roelant" class="host-profile-link">Full profile →</a>
       </div>
 
       <div class="host-card reveal" style="transition-delay: 0.1s">
@@ -1102,6 +1120,7 @@
             <img src="image/MVP.svg" alt="MVP" width="22" height="22">
           </span>
         </div>
+        <a href="/host/stuart" class="host-profile-link">Full profile →</a>
       </div>
 
     </div>

@@ -3,6 +3,10 @@
     {
       "route": "/blog/*",
       "rewrite": "/blog.html"
+    },
+    {
+      "route": "/host/*",
+      "rewrite": "/host.html"
     }
   ],
 "responseOverrides": {

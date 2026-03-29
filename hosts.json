@@ -1,0 +1,31 @@
+[
+  {
+    "slug": "roelant",
+    "name": "Roelant Dieben",
+    "title": "Azure Cloud & AI Architect",
+    "company": "Sopra Steria",
+    "bio": "Azure Cloud & AI Architect at Sopra Steria and Global AI community leader with years of hands-on cloud and AI work under his belt. He's been building in the cloud long enough to know where all the bodies are buried — and he'll tell you exactly where they are if you ask nicely. With a focus on real-world architecture over conference-room theory, Roelant brings a practitioner's eye to every topic: what actually works, what silently costs you a fortune, and what the vendor docs conveniently leave out.",
+    "quote": "Fully loaded with cloud expertise — and he never misses.",
+    "linkedin": "https://www.linkedin.com/in/roelantdieben",
+    "badges": [
+      { "label": "Microsoft AI Foundry MVP", "icon": "/image/MVP.svg" }
+    ],
+    "avatar": "/image/roelant.jpg",
+    "initials": "RD"
+  },
+  {
+    "slug": "stuart",
+    "name": "Stuart van der Lee",
+    "title": "Cloud & AI Consultant",
+    "company": "Sopra Steria",
+    "bio": "Cloud & AI Consultant at Sopra Steria, co-organiser of Azure Thursdays, and a regular conference speaker across the European tech circuit. When Stuart has a take, he doesn't aim for the middle. His work sits at the intersection of cloud architecture, AI adoption, and the kind of organisational realities that make both harder than the whitepapers suggest. He's spent years helping teams cut through the noise and build things that actually survive contact with production.",
+    "quote": "Dual-wielding MVPs. Consider yourself warned.",
+    "linkedin": "https://www.linkedin.com/in/stuartvdlee",
+    "badges": [
+      { "label": "Microsoft Azure MVP", "icon": "/image/MVP.svg" },
+      { "label": "AI Foundry MVP", "icon": "/image/MVP.svg" }
+    ],
+    "avatar": "/image/stuart.jpg",
+    "initials": "SL"
+  }
+]
