@@ -8,5 +8,10 @@
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/blogs/*", "*.{css,js,json,md,png,jpg,svg,ico,woff,woff2}"]
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404.html"
+    }
   }
 }
