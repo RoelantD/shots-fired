@@ -462,20 +462,22 @@
     .host-social-link .fab { font-size: 1.35rem; line-height: 1; }
 
     .host-profile-link {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.75rem;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--text-subtle);
       text-decoration: none;
-      margin-top: 1.5rem;
-      transition: gap 0.2s;
+      transition: color 0.2s, gap 0.2s;
     }
 
-    .host-profile-link:hover { gap: 0.7rem; }
+    .host-profile-link:hover { color: var(--accent); gap: 0.65rem; }
 
 
     .host-mvp-row {
@@ -1070,6 +1072,7 @@
     <div class="hosts-grid">
 
       <div class="host-card reveal">
+        <a href="/host/roelant" class="host-profile-link">Full profile →</a>
         <div class="host-avatar">
           <img src="image/roelant.jpg" alt="Roelant Dieben"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -1093,10 +1096,10 @@
             <img src="image/MVP.svg" alt="MVP" width="22" height="22">
           </span>
         </div>
-        <a href="/host/roelant" class="host-profile-link">Full profile →</a>
       </div>
 
       <div class="host-card reveal" style="transition-delay: 0.1s">
+        <a href="/host/stuart" class="host-profile-link">Full profile →</a>
         <div class="host-avatar">
           <img src="image/stuart.jpg" alt="Stuart van der Lee"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -1120,7 +1123,6 @@
             <img src="image/MVP.svg" alt="MVP" width="22" height="22">
           </span>
         </div>
-        <a href="/host/stuart" class="host-profile-link">Full profile →</a>
       </div>
 
     </div>
