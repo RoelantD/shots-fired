@@ -395,7 +395,7 @@
     const INITIALS = { roelant: 'RD', stuart: 'SL' };
 
     function formatDate(iso) {
-      return new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
     function avatarHtml(authorSlug, author) {
