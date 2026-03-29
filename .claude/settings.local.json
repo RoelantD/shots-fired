@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(json|yaml|yml|toml|config|rc\\)$|src|dist|build|public\")",
+      "Bash(git -C /c/Development/repos/shots-fired log --oneline)"
+    ]
+  }
+}
