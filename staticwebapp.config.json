@@ -5,11 +5,7 @@
       "rewrite": "/blog.html"
     }
   ],
-  "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/blogs/*", "*.{css,js,json,md,png,jpg,svg,ico,woff,woff2}"]
-  },
-  "responseOverrides": {
+"responseOverrides": {
     "404": {
       "rewrite": "/404.html"
     }
