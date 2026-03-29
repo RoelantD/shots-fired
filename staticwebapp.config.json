@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "route": "/blog/*",
+      "rewrite": "/blog.html"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/blogs/*", "*.{css,js,json,md,png,jpg,svg,ico,woff,woff2}"]
+  }
+}

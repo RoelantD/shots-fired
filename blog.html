@@ -463,8 +463,9 @@
         `<p class="post-loading">${msg}</p>`;
     }
 
-    // Parse ?slug= from URL, fetch the single markdown file, parse frontmatter
-    const slug = new URLSearchParams(window.location.search).get('slug');
+    // Read slug from /blog/<slug> path, or fall back to ?slug= query string
+    const pathSlug = window.location.pathname.match(/\/blog\/([^/]+)/)?.[1];
+    const slug = pathSlug || new URLSearchParams(window.location.search).get('slug');
     if (!slug) {
       showError('No post specified. <a href="blogs.html" style="color:var(--accent)">View all posts →</a>');
     } else {

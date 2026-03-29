@@ -1360,7 +1360,7 @@
         const preview = posts.slice(0, 2);
         grid.innerHTML = preview.map((post, i) => {
           const date = new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-          return `<a href="blog.html?slug=${post.slug}" class="blog-preview-card reveal" style="transition-delay:${i * 0.1}s">
+          return `<a href="/blog/${post.slug}" class="blog-preview-card reveal" style="transition-delay:${i * 0.1}s">
             <div class="bp-meta">
               ${bpAvatarHtml(post.authorSlug, post.author)}
               <span class="bp-author">${post.author}</span>

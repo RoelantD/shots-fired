@@ -453,7 +453,7 @@
           }
 
           grid.innerHTML = valid.map((post, i) => `
-            <a href="blog.html?slug=${post.slug}" class="blog-card reveal" style="transition-delay:${i * 0.1}s">
+            <a href="/blog/${post.slug}" class="blog-card reveal" style="transition-delay:${i * 0.1}s">
               <div class="blog-card-meta">
                 ${avatarHtml(post.authorSlug, post.author)}
                 <div class="blog-meta-text">
