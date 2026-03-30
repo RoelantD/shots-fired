@@ -898,10 +898,40 @@
 
     .blog-preview-card:hover .bp-read-more { gap: 0.7rem; }
 
+    /* ── HAMBURGER ── */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
+      nav { padding: 1rem 1.5rem; flex-wrap: wrap; }
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; flex-direction: column; align-items: flex-start; width: 100%; gap: 0; padding: 0.25rem 0 0.75rem; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.6rem 0; font-size: 0.85rem; }
+      .nav-cta { background: none !important; color: var(--accent) !important; padding: 0.6rem 0 !important; }
       .hero { padding: 0 1.5rem 5rem; }
       .hero-bottom { flex-direction: column; align-items: flex-start; }
       .section-wrap, .subscribe-wrap, .footer-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -993,6 +1023,9 @@
       <li><a href="blogs.html">Blog</a></li>
       <li><a href="#subscribe" class="nav-cta">Subscribe</a></li>
     </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- ─── HERO ─── -->
@@ -1406,5 +1439,24 @@
       .catch(() => {});
   </script>
 
+  <script>
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links  = document.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      links.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          links.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
