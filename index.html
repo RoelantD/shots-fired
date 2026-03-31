@@ -1309,11 +1309,6 @@
     }, { passive: true });
 
     // ── RIGHT-CLICK BULLET HOLES ──
-    // Audio: 9mm Gunshot by Mike Koenig (soundbible.com, Attribution 3.0)
-    const SHOT_URL = 'https://soundbible.com/grab.php?id=2120&type=mp3';
-    const baseShot = new Audio(SHOT_URL);
-    baseShot.preload = 'auto';
-
     const CRACK_PATTERNS = [
       // Pattern A
       `<circle cx="50" cy="50" r="9" fill="#050505"/>
@@ -1359,10 +1354,6 @@
     ];
 
     function spawnHole(x, y) {
-      const snd = baseShot.cloneNode(true);
-      snd.volume = 0.8;
-      snd.play().catch(() => {});
-
       const size = Math.round(90 * (0.9 + Math.random() * 0.2)); // ±10%
       const rot  = Math.round(Math.random() * 90 - 45);
       const pattern = CRACK_PATTERNS[Math.floor(Math.random() * CRACK_PATTERNS.length)];
@@ -1425,27 +1416,53 @@
       return `<span class="bp-avatar-fallback">${ini}</span>`;
     }
 
+    function parseFrontmatter(text) {
+      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+      if (!match) return {};
+      const meta = {};
+      match[1].split('\n').forEach(line => {
+        const colon = line.indexOf(':');
+        if (colon === -1) return;
+        const key   = line.slice(0, colon).trim();
+        const value = line.slice(colon + 1).trim().replace(/^["']|["']$/g, '');
+        if (key) meta[key] = value;
+      });
+      return meta;
+    }
+
     fetch('blogs.json')
       .then(r => r.json())
-      .then(posts => {
+      .then(slugs => {
         const grid = document.getElementById('blog-preview-grid');
         if (!grid) return;
-        const preview = posts.slice(0, 2);
-        grid.innerHTML = preview.map((post, i) => {
-          const date = new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-          return `<a href="/blog/${post.slug}" class="blog-preview-card reveal" style="transition-delay:${i * 0.1}s">
-            <div class="bp-meta">
-              ${bpAvatarHtml(post.authorSlug, post.author)}
-              <span class="bp-author">${post.author}</span>
-              <span class="bp-dot"></span>
-              <span class="bp-date">${date}</span>
-            </div>
-            <div class="bp-title">${post.title}</div>
-            <p class="bp-excerpt">${post.excerpt}</p>
-            <span class="bp-read-more">Read article →</span>
-          </a>`;
-        }).join('');
-        grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        return Promise.all(
+          slugs.map(slug =>
+            fetch(`blogs/${slug}.md`)
+              .then(r => { if (!r.ok) throw new Error(); return r.text(); })
+              .then(text => ({ slug, ...parseFrontmatter(text) }))
+              .catch(() => null)
+          )
+        ).then(posts => {
+          const valid = posts
+            .filter(Boolean)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 2);
+          grid.innerHTML = valid.map((post, i) => {
+            const date = new Date(post.date + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+            return `<a href="/blog/${post.slug}" class="blog-preview-card reveal" style="transition-delay:${i * 0.1}s">
+              <div class="bp-meta">
+                ${bpAvatarHtml(post.authorSlug, post.author)}
+                <span class="bp-author">${post.author}</span>
+                <span class="bp-dot"></span>
+                <span class="bp-date">${date}</span>
+              </div>
+              <div class="bp-title">${post.title}</div>
+              <p class="bp-excerpt">${post.excerpt}</p>
+              <span class="bp-read-more">Read article →</span>
+            </a>`;
+          }).join('');
+          grid.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
       })
       .catch(() => {});
   </script>
