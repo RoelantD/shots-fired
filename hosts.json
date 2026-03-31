@@ -8,7 +8,8 @@
     "quote": "Fully loaded with cloud expertise — and he never misses.",
     "linkedin": "https://www.linkedin.com/in/roelantdieben",
     "badges": [
-      { "label": "Microsoft AI Foundry MVP", "icon": "/image/MVP.svg" }
+      { "label": "Microsoft AI Foundry MVP", "icon": "/image/MVP.svg", "url": "https://mvp.microsoft.com/en-US/MVP/profile/b6fae151-4a95-ec11-b400-000d3a4fa6d3" },
+      { "label": "Sessionize", "icon": "https://sessionize.com/landing/images/brand/logo/sessionize-avatar.png", "url": "https://sessionize.com/roelant/" }
     ],
     "avatar": "/image/roelant.jpg",
     "initials": "RD"
@@ -22,8 +23,9 @@
     "quote": "Dual-wielding MVPs. Consider yourself warned.",
     "linkedin": "https://www.linkedin.com/in/stuartvdlee",
     "badges": [
-      { "label": "Microsoft Azure MVP", "icon": "/image/MVP.svg" },
-      { "label": "AI Foundry MVP", "icon": "/image/MVP.svg" }
+      { "label": "Microsoft Azure MVP", "icon": "/image/MVP.svg", "url": "https://mvp.microsoft.com/en-US/MVP/profile/c00f4008-bdfb-4613-8878-012ccfbb9f4a" },
+      { "label": "AI Foundry MVP", "icon": "/image/MVP.svg", "url": "https://mvp.microsoft.com/en-US/MVP/profile/c00f4008-bdfb-4613-8878-012ccfbb9f4a" },
+      { "label": "Sessionize", "icon": "https://sessionize.com/landing/images/brand/logo/sessionize-avatar.png", "url": "https://sessionize.com/stuart-van-der-lee/" }
     ],
     "avatar": "/image/stuart.jpg",
     "initials": "SL"

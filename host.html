@@ -233,6 +233,13 @@
       border: 1px solid var(--border);
       border-radius: 4px;
       padding: 0.3rem 0.65rem;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a.host-badge:hover {
+      border-color: var(--accent-border);
+      color: var(--text);
     }
 
     .host-badge img { width: 14px; height: 14px; }
@@ -597,12 +604,12 @@
     }
 
     function badgesHtml(badges) {
-      return badges.map(b => `
-        <span class="host-badge">
-          <img src="${b.icon}" alt="" width="14" height="14">
-          ${b.label}
-        </span>
-      `).join('');
+      return badges.map(b => {
+        const inner = `<img src="${b.icon}" alt="" width="14" height="14"> ${b.label}`;
+        return b.url
+          ? `<a href="${b.url}" class="host-badge" target="_blank" rel="noopener noreferrer">${inner}</a>`
+          : `<span class="host-badge">${inner}</span>`;
+      }).join('');
     }
 
     function blogCardHtml(post, i) {
