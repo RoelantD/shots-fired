@@ -493,7 +493,13 @@
       text-decoration: none;
     }
 
-    .mvp-badge img { display: block; }
+    .mvp-badge img {
+      display: block;
+      filter: grayscale(1) opacity(0.55);
+      transition: filter 0.2s;
+    }
+
+    .mvp-badge:hover img { filter: none; }
 
     .mvp-badge::after {
       content: attr(data-tip);
