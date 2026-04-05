@@ -9,6 +9,8 @@ tags: azure, certification, ai, az-204, ai-102
 
 If you hold an AZ-204 or AI-102, mark your calendar. Both exams retire in 2026, and the replacements tell you exactly where Microsoft thinks cloud development is going. Spoiler: it's all AI, all the way down.
 
+> It's all AI, all the way down
+
 On March 6, 2026, Microsoft announced one of the biggest overhauls to its certification portfolio in years. Seven existing exams are being retired. Nine new ones are coming in. And if you look at the list long enough, a pattern becomes very clear: the "generic Azure developer" is no longer a role Microsoft certifies for.
 
 ## What's Actually Happening
