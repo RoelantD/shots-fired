@@ -53,13 +53,11 @@ Two completely new exams also arrive with no predecessor: DP-750 for Azure Datab
 
 > Azure Databricks and SQL AI are added to the curriculum
 
-Of the nine new certifications, six replace retiring ones and three are new. Nearly all of them assume AI is part of the job now.
-
 ## The Developer Angle: There's No Neutral Ground Anymore
 
-Here's the uncomfortable read on this. If you're an Azure developer who has stayed mostly in traditional cloud territory — Functions, App Service, queues, storage, and ARM templates — Microsoft is telling you that your next certification step requires a real shift into AI-integrated development.
+Here's the uncomfortable read on this. If you're an Azure developer who has stayed mostly in traditional cloud territory — Functions, App Service, queues, storage, and ARM templates — Microsoft is telling you that your next certification step requires a real shift into AI-integrated development. Hopefully this is the final wake-up call for some of the AI agnostics.
 
-AI-200 isn't AZ-204 with a sprinkle of OpenAI. The topic list reads like a different job: vector databases, event-driven AI pipelines, distributed observability for AI workloads. These are genuinely different skills from what AZ-204 tested.
+AI-200 isn't AZ-204 with a sprinkle of AI. The topic list reads like a different job: vector databases, event-driven AI pipelines, distributed observability for AI workloads. These are genuinely different skills from what AZ-204 tested.
 
 Similarly, AI-103 isn't AI-102 plus agents. It's agents as the primary design pattern, with Foundry as the platform you live in.
 
@@ -67,8 +65,10 @@ Microsoft is making a structural bet that within a few years, every developer bu
 
 ## What Should You Do Now?
 
-If you're close to finishing AZ-204 or AI-102 prep, take the exam before the retirement dates. Your earned certification stays valid on your transcript until it expires. Retirement does not invalidate what you've already earned. And both exams still test real, applicable skills.
+If you're close to finishing AZ-204 or AI-102 prep, take the exam before the retirement dates. Your earned certification stays valid on your transcript until it expires. Retirement does not invalidate what you've already earned. And both exams still test real, applicable skills. Especially the AZ-204 value will probably carry for years.
 
-If you're just starting out, the math is simple. Invest your time in AI-200 or AI-103 depending on your role. The prep ecosystem is still forming, but being early on a new certification carries weight with employers. Both exams also reflect where actual project work is heading, so the studying won't be wasted.
+> The AZ-204 value will probably carry for years
+
+If you're just starting out, the math is simple. Invest your time in AI-200 or AI-103 depending on your role. The prep ecosystem is still forming, but being early on a new certification carries weight with employers and customers. Both exams also reflect where actual project work is heading, so the studying won't be wasted.
 
 The certification that said "I build cloud apps" is gone. The replacement says "I build AI-integrated systems on cloud infrastructure." That's a bigger jump than the exam number suggests.
