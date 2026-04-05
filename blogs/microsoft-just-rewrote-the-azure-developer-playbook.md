@@ -11,7 +11,7 @@ If you hold an AZ-204 or AI-102, mark your calendar. Both exams retire in 2026, 
 
 > It's all AI, all the way down
 
-On March 6, 2026, Microsoft announced one of the biggest overhauls to its certification portfolio in years. Seven existing exams are being retired. Nine new ones are coming in. And if you look at the list long enough, a pattern becomes very clear: the "generic Azure developer" is no longer a role Microsoft certifies for.
+On March 6, 2026, Microsoft announced one of the biggest overhauls to its certification portfolio in years. **Seven** existing exams are being retired. **Nine** new ones are coming in. And if you look at the list long enough, a pattern becomes very clear: the "generic Azure developer" is no longer a role Microsoft certifies for.
 
 ## What's Actually Happening
 
@@ -28,7 +28,7 @@ That's two of the most popular developer-facing Azure certifications gone within
 
 The new Azure AI Cloud Developer Associate certification is for developers who want to prove they can build, integrate, and monitor AI solutions on Azure using containerized compute, vector-enabled databases, event-driven AI pipelines, serverless functions, secret management, and distributed observability.
 
-Notice what's gone: the broad AZ-204 coverage of App Service, Service Bus, blob storage patterns, and general-purpose cloud plumbing. What's in its place is a stack built around AI workloads. If you're a developer who just wants to ship a solid Azure web app without thinking about vector databases, this certification no longer represents your job.
+Notice what's gone: the broad AZ-204 coverage of App Service, Service Bus, blob storage patterns, and general-purpose cloud plumbing. What's in its place is a stack built around AI workloads. If you're a developer who just wants to ship a solid Azure web app without thinking about vector databases, this certification no longer represents your job. Another confirmation about the direction we are all headed in.
 
 The AI-200 exam went into beta in April 2026 and is expected to go live in July 2026. There is no automatic transition from AZ-204 — you need to take AI-200 from scratch to earn the new credential. [More details](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-cloud-developer-associate/)
 
@@ -50,6 +50,8 @@ It's not just the developer exams. The whole portfolio is being reshaped:
 - **AZ-800 and AZ-801** (Windows Server) are consolidated into **AZ-802**. This is the one exam in this wave with no AI angle — hybrid infrastructure still needs people. [Details](https://learn.microsoft.com/en-us/credentials/certifications/windows-server-hybrid-administrator-associate/)
 
 Two completely new exams also arrive with no predecessor: DP-750 for Azure Databricks data engineering and DP-800 for SQL development with AI integration, covering things like building RAG pipelines with SQL as the data layer.
+
+> Azure Databricks and SQL AI are added to the curriculum
 
 Of the nine new certifications, six replace retiring ones and three are new. Nearly all of them assume AI is part of the job now.
 
