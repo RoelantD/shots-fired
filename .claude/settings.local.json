@@ -3,7 +3,16 @@
     "allow": [
       "Bash(grep -E \"\\\\.\\(json|yaml|yml|toml|config|rc\\)$|src|dist|build|public\")",
       "Bash(git -C /c/Development/repos/shots-fired log --oneline)",
-      "Bash(grep -v \":0$\")"
+      "Bash(grep -v \":0$\")",
+      "mcp__Claude_Preview__preview_start",
+      "WebSearch",
+      "Bash(git status:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "Bash(git rebase:*)"
     ]
   }
 }

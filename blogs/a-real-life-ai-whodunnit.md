@@ -3,7 +3,7 @@ title: A Real-Life AI Whodunnit
 author: Roelant Dieben
 authorSlug: roelant
 date: 2026-04-08
-excerpt: AI is solving problems that stumped humans for decades. But read the fine print — there was a human in every room.
+excerpt: AI is solving problems that stumped humans for decades. But read the fine print. There was a human in every room.
 tags: ai, research, mathematics, collaboration
 ---
 
@@ -51,4 +51,4 @@ That is not a small job. It is just a different one than we thought we were trai
 
 And it is going to keep changing. The gap between "AI found the construction" and "AI wrote the proof" is closing. The gap between "AI completed a 3-hour task" and "AI completed a 12-hour task" closed in two months. At some point the human in the loop stops being the one who does the work and becomes the one who decides what work is worth doing.
 
-We are not there yet. But the job posting is already being rewritten.
+We are not there yet. But the job listings are already being rewritten.
