@@ -491,11 +491,12 @@
       ))
       .then(posts => {
         document.getElementById('loading-msg').style.display = 'none';
-        document.getElementById('post-count').textContent = `${valid.length} post${valid.length !== 1 ? 's' : ''}`;
 
         const valid = posts
           .filter(Boolean)
           .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        document.getElementById('post-count').textContent = `${valid.length} post${valid.length !== 1 ? 's' : ''}`;
 
         if (!valid.length) {
           document.getElementById('loading-msg').style.display = 'block';
