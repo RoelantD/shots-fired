@@ -378,6 +378,7 @@
     <div class="section-label">From the Hosts</div>
     <h1 class="page-title">THE BLOG</h1>
     <p class="page-subtitle">Longer reads, deeper dives, and takes that need more than a podcast episode to do justice.</p>
+    <p class="post-count" id="post-count" style="font-size:0.85rem; color:var(--text-subtle); margin-top:1rem;"></p>
   </div>
 
   <!-- ─── POST SECTIONS ─── -->
@@ -490,6 +491,7 @@
       ))
       .then(posts => {
         document.getElementById('loading-msg').style.display = 'none';
+        document.getElementById('post-count').textContent = `${valid.length} post${valid.length !== 1 ? 's' : ''}`;
 
         const valid = posts
           .filter(Boolean)
