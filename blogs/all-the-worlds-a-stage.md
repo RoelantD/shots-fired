@@ -5,6 +5,7 @@ authorSlug: roelant
 date: 2026-04-11
 excerpt: An LLM has no fixed identity. No opinions. No defaults beyond the statistical average of everything it was trained on. Until you talk to it, it is an actor standing in the wings with no role, no script, and no idea what scene it's walking into. And you've been directing it like an intern on their first day.
 tags: ai, developer tools, prompting
+category: AI
 ---
 
 Shakespeare wrote that all the men and women are merely players. He didn't have access to a GPT, but the metaphor holds up surprisingly well. An LLM has no fixed identity. No opinions. No defaults beyond the statistical average of everything it was trained on. Until you talk to it, it is an actor standing in the wings with no role, no script, and no idea what scene it's walking into.

@@ -9,6 +9,10 @@
       "rewrite": "/host.html"
     },
     {
+      "route": "/all-blogs",
+      "rewrite": "/all-blogs.html"
+    },
+    {
       "route": "/admin",
       "rewrite": "/admin.html",
       "allowedRoles": ["authenticated"]

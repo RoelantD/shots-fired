@@ -5,6 +5,7 @@ authorSlug: roelant
 date: 2026-04-05
 excerpt: If you hold an AZ-204 or AI-102, mark your calendar. Both exams retire in 2026, and the replacements tell you exactly where Microsoft thinks cloud development is going. Spoiler: it's all AI, all the way down.
 tags: azure, certification, ai, az-204, ai-102
+category: AI
 ---
 
 If you hold an [AZ-204 (Azure Developer)](https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/) or [AI-102 (Azure AI Engineer)](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/), mark your calendar. Both exams retire in 2026, and the replacements tell you exactly where Microsoft thinks cloud development is going. Spoiler: it's all AI, all the way down.

@@ -5,6 +5,7 @@ authorSlug: stuart
 date: 2026-03-15
 excerpt: Stuart has a lot of thoughts about cloud. He will share them very soon. Any minute now. We are all waiting.
 tags: cloud, architecture, azure
+category: General
 ---
 
 Stuart has been staring at this blank page for a while now.

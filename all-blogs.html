@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog — Shots Fired</title>
+  <title>All Posts — Shots Fired</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23111' stroke='%23e63946' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='5' fill='none' stroke='%23e63946' stroke-width='1.5'/%3E%3Cline x1='16' y1='2' x2='16' y2='10' stroke='%23e63946' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='22' x2='16' y2='30' stroke='%23e63946' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='2' y1='16' x2='10' y2='16' stroke='%23e63946' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='22' y1='16' x2='30' y2='16' stroke='%23e63946' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E">
-  <meta name="description" content="Longer reads from the Shots Fired hosts — opinions, deep dives, and takes that didn't fit in an episode.">
+  <meta name="description" content="All posts from the Shots Fired hosts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
@@ -65,32 +65,10 @@
     .logo-mark { width: 34px; height: 34px; flex-shrink: 0; }
     .brand-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.08em; }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
+    .nav-links { list-style: none; display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--text); }
-
-    .nav-cta {
-      background: var(--accent) !important;
-      color: #fff !important;
-      padding: 0.5rem 1.25rem !important;
-      border-radius: 4px;
-    }
-
+    .nav-cta { background: var(--accent) !important; color: #fff !important; padding: 0.5rem 1.25rem !important; border-radius: 4px; }
     .nav-cta:hover { opacity: 0.88; }
 
     /* ── PAGE HEADER ── */
@@ -99,6 +77,22 @@
       max-width: 1160px;
       margin: 0 auto;
     }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--text-muted); }
 
     .section-label {
       font-size: 0.68rem;
@@ -112,51 +106,96 @@
       gap: 0.75rem;
     }
 
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1.5px;
-      background: var(--accent);
-    }
+    .section-label::before { content: ''; display: block; width: 24px; height: 1.5px; background: var(--accent); }
 
     .page-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(3.5rem, 9vw, 7rem);
       line-height: 0.9;
       letter-spacing: 0.02em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
     }
 
-    .page-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 520px;
-      line-height: 1.75;
+    .post-count {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+      margin-top: 1rem;
     }
+
+    /* ── FILTERS ── */
+    .filters-wrap {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .filter-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-right: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+
+    .filter-btn:hover { color: var(--text); border-color: var(--text-subtle); }
+
+    .filter-btn.active {
+      background: var(--accent-dim);
+      border-color: var(--accent-border);
+      color: var(--accent);
+    }
+
+    /* Author filter uses avatar style */
+    .filter-btn.author-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .filter-btn.author-btn img {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: grayscale(1) opacity(0.6);
+      transition: filter 0.2s;
+    }
+
+    .filter-btn.author-btn.active img,
+    .filter-btn.author-btn:hover img { filter: none; }
 
     /* ── BLOG LIST WRAP ── */
     .blog-list-wrap {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 0 3rem 8rem;
-    }
-
-    /* ── SECTION HEADINGS ── */
-    .posts-section { margin-bottom: 4rem; }
-
-    .posts-section-label {
-      display: block;
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 2rem;
-    }
-
-    .posts-section-label.older {
-      color: var(--text-muted);
+      padding: 0 3rem 4rem;
     }
 
     /* ── BLOG GRID ── */
@@ -164,6 +203,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
+      min-height: 200px;
     }
 
     .blog-card {
@@ -179,49 +219,14 @@
       overflow: hidden;
     }
 
-    .blog-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 0;
-      background: var(--accent);
-      transition: height 0.3s ease;
-    }
-
+    .blog-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--accent); transition: height 0.3s ease; }
     .blog-card:hover { border-color: var(--accent-border); background: var(--bg-elevated); transform: translateY(-3px); }
     .blog-card:hover::before { height: 100%; }
 
-    .blog-card-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
+    .blog-card-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
 
-    .blog-author-avatar {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1.5px solid var(--border);
-      flex-shrink: 0;
-    }
-
-    .blog-author-avatar-fallback {
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      background: var(--bg-elevated);
-      border: 1.5px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 700;
-      color: var(--accent);
-      flex-shrink: 0;
-      letter-spacing: 0.05em;
-    }
-
+    .blog-author-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--border); flex-shrink: 0; }
+    .blog-author-avatar-fallback { width: 32px; height: 32px; border-radius: 50%; background: var(--bg-elevated); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; color: var(--accent); flex-shrink: 0; letter-spacing: 0.05em; }
     .blog-meta-text { display: flex; flex-direction: column; gap: 0.1rem; }
     .blog-author-name { font-size: 0.8rem; font-weight: 600; color: var(--text); }
     .blog-date { font-size: 0.72rem; color: var(--text-subtle); letter-spacing: 0.05em; }
@@ -239,70 +244,44 @@
       margin-bottom: 0.75rem;
     }
 
-    .blog-card-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      letter-spacing: 0.02em;
-      line-height: 1.05;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
+    .blog-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.02em; line-height: 1.05; margin-bottom: 1rem; color: var(--text); }
+    .blog-card-excerpt { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.75rem; }
 
-    .blog-card-excerpt {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 1.75rem;
-    }
-
-    .blog-read-more {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: gap 0.2s;
-    }
-
+    .blog-read-more { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
     .blog-card:hover .blog-read-more { gap: 0.7rem; }
 
-    /* ── VIEW ALL ── */
-    .view-all-wrap {
-      margin-top: 2.5rem;
+    /* ── NO RESULTS ── */
+    .blog-empty { text-align: center; padding: 5rem 0; color: var(--text-subtle); font-size: 0.9rem; grid-column: 1 / -1; }
+
+    /* ── PAGINATION ── */
+    .pagination {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-
-    .view-all-link {
-      display: inline-flex;
-      align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-decoration: none;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .page-btn {
+      background: transparent;
       border: 1px solid var(--border);
-      padding: 0.65rem 1.25rem;
       border-radius: 4px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .view-all-link:hover { color: var(--text); border-color: var(--text-subtle); }
-
-    /* ── EMPTY / LOADING ── */
-    .blog-empty {
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.5rem 0.875rem;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      min-width: 38px;
       text-align: center;
-      padding: 3rem 0;
-      color: var(--text-subtle);
-      font-size: 0.9rem;
-      grid-column: 1 / -1;
     }
+
+    .page-btn:hover:not(:disabled) { color: var(--text); border-color: var(--text-subtle); }
+    .page-btn:disabled { opacity: 0.3; cursor: default; }
+    .page-btn.active { background: var(--accent-dim); border-color: var(--accent-border); color: var(--accent); font-weight: 600; }
 
     /* ── FOOTER ── */
     footer { border-top: 1px solid var(--border); padding: 2.5rem 3rem; }
@@ -310,10 +289,6 @@
     .footer-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--text); }
     .footer-brand-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.08em; }
     .footer-copy { font-size: 0.78rem; color: var(--text-subtle); }
-
-    /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
 
     /* ── HAMBURGER ── */
     .nav-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0; }
@@ -331,7 +306,8 @@
       .nav-links a { padding: 0.6rem 0; font-size: 0.85rem; }
       .nav-cta { background: none !important; color: var(--accent) !important; padding: 0.6rem 0 !important; }
       .page-header { padding: 8rem 1.5rem 3rem; }
-      .blog-list-wrap { padding: 0 1.5rem 5rem; }
+      .filters-wrap { padding: 0 1.5rem 2rem; }
+      .blog-list-wrap { padding: 0 1.5rem 4rem; }
       .blog-grid { grid-template-columns: 1fr; }
       .footer-wrap { flex-direction: column; gap: 1rem; text-align: center; }
     }
@@ -375,31 +351,48 @@
 
   <!-- ─── PAGE HEADER ─── -->
   <div class="page-header">
+    <a href="/blogs.html" class="back-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </a>
     <div class="section-label">From the Hosts</div>
-    <h1 class="page-title">THE BLOG</h1>
-    <p class="page-subtitle">Longer reads, deeper dives, and takes that need more than a podcast episode to do justice.</p>
+    <h1 class="page-title">All Posts</h1>
+    <p class="post-count" id="post-count"></p>
   </div>
 
-  <!-- ─── POST SECTIONS ─── -->
+  <!-- ─── FILTERS ─── -->
+  <div class="filters-wrap">
+    <!-- Category filter -->
+    <div class="filter-row" id="category-filter">
+      <span class="filter-label">Category</span>
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="AI">AI</button>
+      <button class="filter-btn" data-category="Cloud">Cloud</button>
+      <button class="filter-btn" data-category="FinOps">FinOps</button>
+      <button class="filter-btn" data-category="Architecture">Architecture</button>
+      <button class="filter-btn" data-category="General">General</button>
+    </div>
+    <!-- Author filter -->
+    <div class="filter-row" id="author-filter">
+      <span class="filter-label">Author</span>
+      <button class="filter-btn active" data-author="all">All</button>
+      <button class="filter-btn author-btn" data-author="roelant">
+        <img src="image/roelant.jpg" alt="Roelant" onerror="this.style.display='none'">
+        Roelant
+      </button>
+      <button class="filter-btn author-btn" data-author="stuart">
+        <img src="image/stuart.jpg" alt="Stuart" onerror="this.style.display='none'">
+        Stuart
+      </button>
+    </div>
+  </div>
+
+  <!-- ─── BLOG GRID ─── -->
   <div class="blog-list-wrap">
-
-    <!-- Last Week (hidden until posts exist) -->
-    <div class="posts-section" id="last-week-section" style="display:none">
-      <span class="posts-section-label">Last Week</span>
-      <div class="blog-grid" id="last-week-grid"></div>
+    <div class="blog-grid" id="blog-grid">
+      <p class="blog-empty">Loading posts…</p>
     </div>
-
-    <!-- Older (latest 5) -->
-    <div class="posts-section" id="older-section" style="display:none">
-      <span class="posts-section-label older">Older</span>
-      <div class="blog-grid" id="older-grid"></div>
-      <div class="view-all-wrap">
-        <a href="/all-blogs" class="view-all-link">All posts →</a>
-      </div>
-    </div>
-
-    <p class="blog-empty" id="loading-msg">Loading posts…</p>
-
+    <div class="pagination" id="pagination" style="display:none"></div>
   </div>
 
   <!-- ─── FOOTER ─── -->
@@ -424,6 +417,13 @@
   <script>
     const AVATAR   = { roelant: 'image/roelant.jpg', stuart: 'image/stuart.jpg' };
     const INITIALS = { roelant: 'RD', stuart: 'SL' };
+    const PAGE_SIZE = 10;
+
+    let allPosts     = [];
+    let filteredPosts = [];
+    let currentPage  = 1;
+    let activeCategory = 'all';
+    let activeAuthor   = 'all';
 
     function formatDate(iso) {
       return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -452,9 +452,9 @@
       return meta;
     }
 
-    function cardHtml(post, i) {
+    function cardHtml(post) {
       return `
-        <a href="/blog/${post.slug}" class="blog-card reveal" style="transition-delay:${i * 0.08}s">
+        <a href="/blog/${post.slug}" class="blog-card">
           <div class="blog-card-meta">
             ${avatarHtml(post.authorSlug, post.author)}
             <div class="blog-meta-text">
@@ -469,15 +469,79 @@
         </a>`;
     }
 
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.08 }
-    );
-
-    function revealAll(container) {
-      container.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    function applyFilters() {
+      filteredPosts = allPosts.filter(p => {
+        const catMatch    = activeCategory === 'all' || (p.category || '').toLowerCase() === activeCategory.toLowerCase();
+        const authorMatch = activeAuthor   === 'all' || p.authorSlug === activeAuthor;
+        return catMatch && authorMatch;
+      });
+      currentPage = 1;
+      render();
     }
 
+    function render() {
+      const grid       = document.getElementById('blog-grid');
+      const pagination = document.getElementById('pagination');
+      const totalPages = Math.ceil(filteredPosts.length / PAGE_SIZE);
+      const start      = (currentPage - 1) * PAGE_SIZE;
+      const page       = filteredPosts.slice(start, start + PAGE_SIZE);
+
+      // Update count
+      const label = activeCategory === 'all' && activeAuthor === 'all'
+        ? `${filteredPosts.length} posts`
+        : `${filteredPosts.length} of ${allPosts.length} posts`;
+      document.getElementById('post-count').textContent = label;
+
+      if (!filteredPosts.length) {
+        grid.innerHTML = '<p class="blog-empty">No posts match the selected filters.</p>';
+        pagination.style.display = 'none';
+        return;
+      }
+
+      grid.innerHTML = page.map(cardHtml).join('');
+
+      // Pagination
+      if (totalPages <= 1) {
+        pagination.style.display = 'none';
+        return;
+      }
+
+      pagination.style.display = 'flex';
+      let html = `<button class="page-btn" id="prev-btn" ${currentPage === 1 ? 'disabled' : ''}>←</button>`;
+      for (let i = 1; i <= totalPages; i++) {
+        html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+      }
+      html += `<button class="page-btn" id="next-btn" ${currentPage === totalPages ? 'disabled' : ''}>→</button>`;
+      pagination.innerHTML = html;
+
+      pagination.querySelector('#prev-btn')?.addEventListener('click', () => { currentPage--; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      pagination.querySelector('#next-btn')?.addEventListener('click', () => { currentPage++; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      pagination.querySelectorAll('[data-page]').forEach(btn => {
+        btn.addEventListener('click', () => { currentPage = +btn.dataset.page; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      });
+    }
+
+    // Category filter buttons
+    document.getElementById('category-filter').addEventListener('click', e => {
+      const btn = e.target.closest('[data-category]');
+      if (!btn) return;
+      document.querySelectorAll('[data-category]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.category;
+      applyFilters();
+    });
+
+    // Author filter buttons
+    document.getElementById('author-filter').addEventListener('click', e => {
+      const btn = e.target.closest('[data-author]');
+      if (!btn) return;
+      document.querySelectorAll('[data-author]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeAuthor = btn.dataset.author;
+      applyFilters();
+    });
+
+    // Load posts
     fetch('blogs.json')
       .then(r => r.json())
       .then(slugs => Promise.all(
@@ -489,43 +553,13 @@
         )
       ))
       .then(posts => {
-        document.getElementById('loading-msg').style.display = 'none';
-
-        const valid = posts
+        allPosts = posts
           .filter(Boolean)
           .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-        if (!valid.length) {
-          document.getElementById('loading-msg').style.display = 'block';
-          document.getElementById('loading-msg').textContent = 'No posts yet. Check back soon.';
-          return;
-        }
-
-        const now       = new Date();
-        const weekAgo   = new Date(now - 7 * 24 * 60 * 60 * 1000);
-        const lastWeek  = valid.filter(p => new Date(p.date + 'T00:00:00') >= weekAgo);
-        const older     = valid.filter(p => new Date(p.date + 'T00:00:00') < weekAgo).slice(0, 5);
-
-        // Last Week section
-        if (lastWeek.length) {
-          const lwSection = document.getElementById('last-week-section');
-          const lwGrid    = document.getElementById('last-week-grid');
-          lwGrid.innerHTML = lastWeek.map((p, i) => cardHtml(p, i)).join('');
-          lwSection.style.display = 'block';
-          revealAll(lwGrid);
-        }
-
-        // Older section
-        if (older.length) {
-          const olSection = document.getElementById('older-section');
-          const olGrid    = document.getElementById('older-grid');
-          olGrid.innerHTML = older.map((p, i) => cardHtml(p, i)).join('');
-          olSection.style.display = 'block';
-          revealAll(olGrid);
-        }
+        applyFilters();
       })
       .catch(() => {
-        document.getElementById('loading-msg').textContent = 'Could not load posts.';
+        document.getElementById('blog-grid').innerHTML = '<p class="blog-empty">Could not load posts.</p>';
       });
   </script>
 

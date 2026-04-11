@@ -12,7 +12,7 @@ module.exports = async function (context, req) {
   }
 
   // ── Validate input ───────────────────────────────────────────────────────────
-  const { title, slug, author, authorSlug, date, tags, excerpt, body } = req.body || {};
+  const { title, slug, author, authorSlug, date, category, tags, excerpt, body } = req.body || {};
 
   if (!title || !slug || !author || !authorSlug || !date || !excerpt || !body) {
     context.res = { status: 400, body: { error: 'Missing required fields' } };
@@ -40,6 +40,7 @@ authorSlug: ${authorSlug}
 date: ${date}
 excerpt: ${excerpt}
 tags: ${tags || ''}
+category: ${category || 'General'}
 ---
 
 ${body}

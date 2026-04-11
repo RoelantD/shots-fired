@@ -5,6 +5,7 @@ authorSlug: roelant
 date: 2026-04-08
 excerpt: AI is solving problems that stumped humans for decades. But read the fine print. There was a human in every room.
 tags: ai, research, mathematics, collaboration
+category: AI
 ---
 
 A researcher at [VUB sat down with ChatGPT](https://press.vub.ac.be/chatgpt-can-autonomously-provide-mathematical-proofs) and, across seven chat sessions and four evolving versions of the argument, produced a formal proof for a geometry conjecture that had been sitting unproven since 2024. The headline wrote itself: AI solves unproven math problem.

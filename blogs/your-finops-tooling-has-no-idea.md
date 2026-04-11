@@ -5,6 +5,7 @@ authorSlug: roelant
 date: 2026-03-31
 excerpt: Your FinOps tooling was built for workloads that humans start and stop. Agents don't work that way, and the gap between what your dashboards show and what your agents are actually spending is growing faster than most teams realize.
 tags: azure, foundry, ai, agents
+category: FinOps
 ---
 
 FinOps was built on a reasonable assumption: a human starts a workload, a human stops it, and somewhere in between you tag it, track it, and optimize it. That model held up well for a decade of cloud infrastructure. Agents break it completely.

@@ -57,6 +57,7 @@ Your post content starts here...
 | `authorSlug` | ✅ | `roelant` or `stuart` |
 | `date` | ✅ | `YYYY-MM-DD` format |
 | `excerpt` | ✅ | Shown on the blog listing page and in link previews |
+| `category` | ✅ | One of: `AI`, `Cloud`, `FinOps`, `Architecture`, `General` |
 | `tags` | — | Comma-separated, e.g. `azure, ai, prompting` |
 
 ---

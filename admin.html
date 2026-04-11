@@ -551,6 +551,17 @@
                   </select>
                 </div>
                 <div class="form-group">
+                  <label for="category-select">Category <span class="required">*</span></label>
+                  <select id="category-select" required>
+                    <option value="">Select category…</option>
+                    <option value="AI">AI</option>
+                    <option value="Cloud">Cloud</option>
+                    <option value="FinOps">FinOps</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="General">General</option>
+                  </select>
+                </div>
+                <div class="form-group">
                   <label for="tags-input">Tags</label>
                   <input type="text" id="tags-input" placeholder="azure, ai, cloud" autocomplete="off">
                 </div>
@@ -737,11 +748,12 @@
       const select = document.getElementById('author-select');
       const authorSlug = select.value;
       const author = select.options[select.selectedIndex]?.dataset.name || '';
+      const category = document.getElementById('category-select').value;
       const tags   = document.getElementById('tags-input').value.trim();
       const excerpt = document.getElementById('excerpt-input').value.trim();
       const body   = document.getElementById('body-input').value.trim();
 
-      if (!title || !slug || !date || !authorSlug || !excerpt || !body) {
+      if (!title || !slug || !date || !authorSlug || !category || !excerpt || !body) {
         showToast('error', 'Please fill in all required fields.');
         return;
       }
@@ -756,7 +768,7 @@
         const resp = await fetch('/api/create-blog', {
           method:  'POST',
           headers: { 'Content-Type': 'application/json' },
-          body:    JSON.stringify({ title, slug, author, authorSlug, date, tags, excerpt, body })
+          body:    JSON.stringify({ title, slug, author, authorSlug, date, category, tags, excerpt, body })
         });
 
         const result = await resp.json();
