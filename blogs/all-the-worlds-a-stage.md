@@ -13,7 +13,7 @@ Most developers treat it like a search engine. They type a question. They get an
 
 The model isn't the problem. The lack of direction is.
 
-## Act I — What directors actually do
+## {Act I} What directors actually do
 
 A great film director doesn't walk onto set and say "okay, do a good job." Before the camera rolls, they've given their lead actor everything they need: who the character is, where the scene takes place, what the emotional stakes are, what happened just before this moment, and what they want the audience to feel when it's over.
 
@@ -27,7 +27,7 @@ That's a system prompt. That's context. That's the difference between a model th
 
 That's not a prompt. That's a director's brief, and the performance that follows will be categorically different from "review my code." or shouting at it through ALL CAPS.
 
-## Act II — Hallucination is bad improv
+## {Act II} Hallucination is bad improv
 
 Here's where the metaphor gets genuinely useful. Hallucination isn't a bug in the traditional sense. It's what happens when a talented actor is put on stage with no script, no character, no scene partner, and an audience expecting something specific. They improvise. Sometimes brilliantly. Often disastrously.
 
@@ -49,7 +49,7 @@ The model doesn't know what your app is. It doesn't know your stack, your threat
 
 Now the model has a scene to play. It knows the stack. It knows the context. It knows your intended direction and outcome. It knows what "best" means in this specific situation. The improvisation is bounded by reality, and bounded improvisation is where LLMs shine.
 
-## Act III — The practical directing toolkit
+## {Act III} The practical directing toolkit
 
 You don't need to write a novel every time you open a chat window. Directors are efficient. They know which details matter and which don't. And the details that matter are usually the ones that come from actual human experience — the stuff a model cannot infer from your one-line question.
 
@@ -77,7 +77,7 @@ Tone:     Skip the caveats. If my approach is wrong, say so.
   
 You can bake this into a custom GPT, a system prompt in your IDE extension, store it in memory, put it in your constitution, or just keep it as a snippet you paste. The point isn't the format. The point is that the model needs to know what scene it's in before you call action.
 
-## Epilogue — The actor is only as good as the direction
+## {Epilogue} The actor is only as good as the direction
 
 The discourse around LLMs is obsessed with model quality. Which model is smarter. Which one hallucinates less. Which one is worth the API cost. That's a reasonable conversation, but it's putting all the blame on the actor when the real problem is the direction. 
 

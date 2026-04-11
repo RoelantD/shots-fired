@@ -255,6 +255,17 @@
       margin: 3rem 0;
     }
 
+    /* ── HEADING EYEBROW ── */
+    .heading-eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
     /* ── EXAMPLE CARD ── */
     .example-card {
       background: var(--bg-elevated);
@@ -490,8 +501,18 @@
       return { meta, body: match[2] };
     }
 
-    // Custom renderer: scene cards + default code blocks
+    // Custom renderer: heading eyebrows + example cards + default code blocks
     const renderer = new marked.Renderer();
+    renderer.heading = function(text, level) {
+      // Detect {Decorator} at the start of the heading text
+      const match = text.match(/^\{([^}]+)\}\s*(.*)/);
+      if (match) {
+        const eyebrow = match[1];
+        const title   = match[2];
+        return `<h${level}><span class="heading-eyebrow">${eyebrow}</span>${title}</h${level}>`;
+      }
+      return `<h${level}>${text}</h${level}>`;
+    };
     renderer.code = function(code, language) {
       if (language && language.startsWith('example:')) {
         const label = language.slice(8).trim();

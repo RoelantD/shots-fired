@@ -104,6 +104,20 @@ Normal paragraph text.
 
 ---
 
+### Heading eyebrow
+
+Place a `{label}` decorator at the start of any heading to render a small coloured label above the heading text. Good for acts, chapters, numbered sections, or any thematic grouping.
+
+```markdown
+## {Act I} What directors actually do
+## {Tip} Keep your context tight
+## {01} Introduction
+```
+
+The decorator renders in accent orange above the heading in small caps. The heading text itself is unchanged.
+
+---
+
 ### Pull quote
 
 Use a `>` blockquote. It renders as a centred pull quote with accent lines — best for a single punchy sentence.
