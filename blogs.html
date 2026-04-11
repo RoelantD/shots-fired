@@ -177,6 +177,7 @@
       transition: border-color 0.25s, transform 0.25s, background 0.25s;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .blog-card::before {
@@ -237,6 +238,12 @@
       border-radius: 3px;
       padding: 0.15rem 0.5rem;
       margin-bottom: 0.75rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .blog-card-category:hover {
+      background: var(--accent-dim);
     }
 
     .blog-card-title {
@@ -458,8 +465,11 @@
     }
 
     function cardHtml(post, i) {
+      const href = `/blog/${post.slug}`;
       return `
-        <a href="/blog/${post.slug}" class="blog-card reveal" style="transition-delay:${i * 0.08}s">
+        <div class="blog-card reveal" style="transition-delay:${i * 0.08}s"
+             onclick="location.href='${href}'" role="link" tabindex="0"
+             onkeydown="if(event.key==='Enter')location.href='${href}'">
           <div class="blog-card-meta">
             ${avatarHtml(post.authorSlug, post.author)}
             <div class="blog-meta-text">
@@ -467,11 +477,11 @@
               <span class="blog-date">${post.date ? formatDate(post.date) : ''}</span>
             </div>
           </div>
-          ${post.category ? `<span class="blog-card-category">${post.category}</span>` : ''}
+          ${post.category ? `<a href="/all-blogs/${post.category}" class="blog-card-category" onclick="event.stopPropagation()">${post.category}</a>` : ''}
           <h2 class="blog-card-title">${post.title || post.slug}</h2>
           <p class="blog-card-excerpt">${post.excerpt || ''}</p>
           <span class="blog-read-more">Read article →</span>
-        </a>`;
+        </div>`;
     }
 
     const observer = new IntersectionObserver(

@@ -225,6 +225,7 @@
       transition: border-color 0.25s, transform 0.25s, background 0.25s;
       position: relative;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .blog-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--accent); transition: height 0.3s ease; }
@@ -250,6 +251,12 @@
       border-radius: 3px;
       padding: 0.15rem 0.5rem;
       margin-bottom: 0.75rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .blog-card-category:hover {
+      background: var(--accent-dim);
     }
 
     .blog-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.02em; line-height: 1.05; margin-bottom: 1rem; color: var(--text); }
@@ -428,11 +435,25 @@
     const INITIALS = { roelant: 'RD', stuart: 'SL' };
     const PAGE_SIZE = 10;
 
-    let allPosts     = [];
+    let allPosts      = [];
     let filteredPosts = [];
-    let currentPage  = 1;
-    let activeCategory = 'all';
-    let activeAuthor   = 'all';
+    let currentPage   = 1;
+    let activeAuthor  = 'all';
+
+    // Read category from URL path: /all-blogs/AI → "AI"
+    const pathSegment    = window.location.pathname.split('/').filter(Boolean).pop();
+    const CATEGORIES     = ['ai', 'cloud', 'finops', 'architecture', 'general'];
+    const urlCategory    = CATEGORIES.includes(pathSegment?.toLowerCase()) ? pathSegment : null;
+    let activeCategory   = urlCategory || 'all';
+
+    function syncCategoryButtons() {
+      document.querySelectorAll('[data-category]').forEach(b => {
+        b.classList.toggle('active', b.dataset.category.toLowerCase() === activeCategory.toLowerCase());
+      });
+    }
+
+    // Pre-activate correct button if URL specified a category
+    syncCategoryButtons();
 
     function formatDate(iso) {
       return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -462,8 +483,10 @@
     }
 
     function cardHtml(post) {
+      const href = `/blog/${post.slug}`;
       return `
-        <a href="/blog/${post.slug}" class="blog-card">
+        <div class="blog-card" onclick="location.href='${href}'" role="link" tabindex="0"
+             onkeydown="if(event.key==='Enter')location.href='${href}'">
           <div class="blog-card-meta">
             ${avatarHtml(post.authorSlug, post.author)}
             <div class="blog-meta-text">
@@ -471,11 +494,11 @@
               <span class="blog-date">${post.date ? formatDate(post.date) : ''}</span>
             </div>
           </div>
-          ${post.category ? `<span class="blog-card-category">${post.category}</span>` : ''}
+          ${post.category ? `<a href="/all-blogs/${post.category}" class="blog-card-category" onclick="event.stopPropagation()">${post.category}</a>` : ''}
           <h2 class="blog-card-title">${post.title || post.slug}</h2>
           <p class="blog-card-excerpt">${post.excerpt || ''}</p>
           <span class="blog-read-more">Read article →</span>
-        </a>`;
+        </div>`;
     }
 
     function applyFilters() {
