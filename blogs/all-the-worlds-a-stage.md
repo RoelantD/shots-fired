@@ -74,7 +74,6 @@ Tone:     Skip the caveats. If my approach is wrong, say so.
 // Everything that follows will be shaped by it.
 ```  
   
-  
 You can bake this into a custom GPT, a system prompt in your IDE extension, store it in memory, put it in your constitution, or just keep it as a snippet you paste. The point isn't the format. The point is that the model needs to know what scene it's in before you call action.
 
 ## {Epilogue} The actor is only as good as the direction
