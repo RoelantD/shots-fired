@@ -33,13 +33,13 @@ Take Curb Your Enthusiasm. It looks like pure chaos. Larry David wandering throu
 
 LLMs are the same. When you give a model a well-grounded context, it has guardrails. It knows what kind of answer belongs in this scene. When you give it nothing, it fills the void. And the void, it turns out, is where confident-sounding nonsense lives.
 
-```scene:The bad brief
+```example:The bad brief
 "What's the best way to handle authentication in my app?"
 ```
 
 The model doesn't know what your app is. It doesn't know your stack, your threat model, your team size, or whether "best" means most secure, fastest to ship, or cheapest to maintain. So it gives you the Wikipedia version of authentication. Technically correct. Completely useless.
 
-```scene:The director's brief
+```example:The director's brief
 "I'm building a .NET 8 Web API used by a B2B SaaS product. Users authenticate via Azure AD. We're adding a new public-facing endpoint that third-party developers will call with an API key. What's the right approach for issuing, storing, and validating those keys, given we already have Entra ID in place?"
 ```
 

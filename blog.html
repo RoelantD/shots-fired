@@ -255,8 +255,8 @@
       margin: 3rem 0;
     }
 
-    /* ── SCENE CARD ── */
-    .scene-card {
+    /* ── EXAMPLE CARD ── */
+    .example-card {
       background: var(--bg-elevated);
       border: 1px solid var(--border);
       border-top: 3px solid var(--accent);
@@ -265,7 +265,7 @@
       margin: 2.5rem 0;
     }
 
-    .scene-label {
+    .example-label {
       font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.18em;
@@ -274,7 +274,7 @@
       margin-bottom: 0.75rem;
     }
 
-    .scene-card p {
+    .example-card p {
       margin: 0;
       font-size: 0.9375rem;
       color: var(--text-muted);
@@ -493,10 +493,10 @@
     // Custom renderer: scene cards + default code blocks
     const renderer = new marked.Renderer();
     renderer.code = function(code, language) {
-      if (language && language.startsWith('scene:')) {
-        const label = language.slice(6).trim();
+      if (language && language.startsWith('example:')) {
+        const label = language.slice(8).trim();
         const escaped = code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        return `<div class="scene-card"><div class="scene-label">${label}</div><p>${escaped}</p></div>`;
+        return `<div class="example-card"><div class="example-label">${label}</div><p>${escaped}</p></div>`;
       }
       const escaped = code.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
       const cls = language ? ` class="language-${language}"` : '';
