@@ -520,6 +520,11 @@
       return new Date(iso + 'T00:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
+    function calcReadingTime(body) {
+      const words = body.trim().split(/\s+/).filter(Boolean).length;
+      return Math.max(1, Math.round(words / 200));
+    }
+
     function avatarHtml(authorSlug, author) {
       if (AVATAR[authorSlug]) {
         return `<img class="post-author-avatar" src="${AVATAR[authorSlug]}" alt="${author}"
@@ -578,8 +583,9 @@
     }
 
     function renderArticle(slug, meta, body) {
-      const rawHtml  = marked.parse(body);
-      const postHtml = applyPullQuotes(rawHtml);
+      const rawHtml     = marked.parse(body);
+      const postHtml    = applyPullQuotes(rawHtml);
+      const readingTime = calcReadingTime(body);
 
       const container = document.getElementById('article-container');
       container.innerHTML = `
@@ -595,7 +601,7 @@
             ${avatarHtml(meta.authorSlug, meta.author)}
             <div class="post-meta-text">
               <span class="post-author-name">${meta.author || 'Unknown'}</span>
-              <span class="post-date">${meta.date ? formatDate(meta.date) : ''}</span>
+              <span class="post-date">${meta.date ? formatDate(meta.date) : ''} · ${readingTime} min read</span>
             </div>
           </div>
           <h1 class="post-title">${meta.title || slug}</h1>
