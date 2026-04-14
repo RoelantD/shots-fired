@@ -36,7 +36,7 @@ For developers specifically, the picture gets uglier. Because coding assistants 
 
 ## GitHub Copilot: the canary in the coal mine
 
-Last week, GitHub quietly dropped an update that deserves more attention than it got. As GitHub Copilot continues to grow, GitHub observed an increase in patterns of high concurrency and intense usage, placing significant strain on shared infrastructure and operating resources.
+Last week, GitHub quietly dropped [an update that deserves more attention than it got](https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro/). As GitHub Copilot continues to grow, GitHub observed an increase in patterns of high concurrency and intense usage, placing significant strain on shared infrastructure and operating resources.
 
 Translation: people are actually using this thing. Heavily. And the flat-rate model is breaking.
 
@@ -46,7 +46,7 @@ This is the polite version of "we mispriced this."
 
 > *People are using this heavily. The flat-rate model is breaking.*
 
-The numbers themselves are revealing. Customers on the Copilot Pro tier at $10 per month receive 300 monthly premium requests, while Copilot Pro+ at $39 per month offers 1,500. Premium requests cover everything interesting: agentic coding, multi-file edits, anything beyond the base model. The base model still works after you exhaust your quota, but you're coding with one hand tied behind your back.
+The numbers themselves are revealing. [Customers on the Copilot Pro tier at $10 per month receive 300 monthly premium requests, while Copilot Pro+ at $39 per month offers 1,500.](https://docs.github.com/en/copilot/concepts/billing/copilot-requests) Premium requests cover everything interesting: agentic coding, multi-file edits, anything beyond the base model. The base model still works after you exhaust your quota, but you're coding with one hand tied behind your back.
 
 Here's where it gets spicy. Claude Opus 4.6 in fast mode carries a 30x multiplier: one interaction counts as 30 premium requests. Standard Claude Opus 4.5 and 4.6 run at 3x (as of April 14 2026). At those rates, 300 monthly premium requests burns through in a single focused afternoon. Copilot Pro+ users with 1,500 premium requests don't have as much runway as the number implies.
 
@@ -58,7 +58,7 @@ And now GitHub is adding session-level rate limits on top of those monthly caps.
 
 Cursor had a simpler world. $20/month bought you 500 fast premium requests. Simple. Predictable.
 
-Then in June 2025, they switched to a credit system. The pricing structure changed significantly, effectively cutting the monthly request count from 500 to approximately 225 per month at the same $20 price point. The CEO issued a public apology. A chunk of users migrated to Windsurf in protest.
+Then in June 2025, they switched to a credit system. The pricing structure changed significantly, effectively cutting the monthly request count from 500 to approximately 225 per month at the same $20 price point. [The CEO issued a public apology.](https://techcrunch.com/2025/07/07/cursor-apologizes-for-unclear-pricing-changes-that-upset-users/) A chunk of users migrated to Windsurf in protest.
 
 The underlying reason is the same as Copilot's: frontier models like Claude Opus or GPT-5 cost far more per token than lighter alternatives. When users default to the best model for every prompt, the economics fall apart fast.
 
@@ -78,7 +78,7 @@ Anthropic at least deserves credit for not pretending the limits don't exist. Th
 
 Claude does not publish one fixed public daily token number for consumer plans. Pro offers at least five times the usage per session compared with Free during peak hours, working on a five-hour reset, and also includes a weekly all-model limit.
 
-In practice, Claude Pro users get roughly 45 messages per 5-hour window. Claude Max comes in two tiers: $100/month for 5x the capacity (around 225 messages per window), and $200/month for 20x (around 900 messages per window).
+In practice, Claude Pro users get roughly 45 messages per 5-hour window. [Claude Max comes in two tiers: $100/month for 5x the capacity (around 225 messages per window), and $200/month for 20x (around 900 messages per window).](https://www.anthropic.com/pricing)
 
 The weekly cap is the one that catches people off guard. It was introduced in August 2025 and it's a hard stop. There's no way to bypass the weekly cap except upgrading to Claude Max or waiting for the reset.
 
