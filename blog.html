@@ -310,6 +310,32 @@
       line-height: 1.7;
     }
 
+    /* ── TABLE ── */
+    .post-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+    }
+
+    .post-body th,
+    .post-body td {
+      text-align: left;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .post-body th {
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      border-bottom: 1px solid var(--accent-border);
+    }
+
+    .post-body tr:last-child td { border-bottom: none; }
+
     /* ── PULL QUOTE ── */
     .pull-quote {
       display: flex;

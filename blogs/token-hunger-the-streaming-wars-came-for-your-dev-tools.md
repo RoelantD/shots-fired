@@ -111,7 +111,7 @@ Every platform is building the same kind of two-speed system. There's the slow l
 Let me put some numbers on the table for a working developer in 2026.
 
 | Tool | Cost/month | What you get | The catch |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | GitHub Copilot Pro | $10 | 300 premium requests | up to 30x multipliers on advanced models |
 | GitHub Copilot Pro+ | $39 | 1,500 premium requests | Session-level rate limits now too |
 | Cursor Pro | $20 | ~225 effective requests | Credit model cut this from 500 in mid-2025 |
