@@ -1,5 +1,5 @@
 ---
-title: Token Hunger -- The Streaming Wars Came for Your Dev Tools
+title: Token Hunger: The Meter Is Running
 author: Roelant Dieben
 authorSlug: roelant
 date: 2026-04-14
@@ -8,7 +8,7 @@ tags: ai, developer-tools, pricing, github-copilot, cursor, claude
 category: AI
 ---
 
-# Token Hunger -- The Streaming Wars Came for Your Dev Tools
+# Token Hunger: The Meter Is Running
 
 **The fix is wearing off.**
 
