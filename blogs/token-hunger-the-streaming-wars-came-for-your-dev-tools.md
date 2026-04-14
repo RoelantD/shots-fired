@@ -1,3 +1,13 @@
+---
+title: Token Hunger -- The Streaming Wars Came for Your Dev Tools
+author: Roelant Dieben
+authorSlug: roelant
+date: 2026-04-14
+excerpt: AI subscription fatigue is real. Every platform has converged on $20/month, but what you get for that $20 keeps shrinking. Here's what the limits actually look like in 2026.
+tags: ai, developer-tools, pricing, github-copilot, cursor, claude
+category: AI
+---
+
 # Token Hunger -- The Streaming Wars Came for Your Dev Tools
 
 **The fix is wearing off.**
