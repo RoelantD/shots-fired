@@ -74,4 +74,3 @@ Because the systems are not waiting.
 
 ---
 
-*Tags: agentic AI, software architecture, governance, MCP*
