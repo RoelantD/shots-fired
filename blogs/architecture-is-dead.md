@@ -10,8 +10,6 @@ category: Architecture
 
 # The architect is dead. Long live the guardrail.
 
-*Shots Fired / Architecture / AI*
-
 Agentic AI is not just changing how software gets built. It is making the craft of software architecture as we know it largely irrelevant. That is not a crisis. It is progress. But it demands a completely different skillset.
 
 ---
@@ -42,6 +40,8 @@ That is a fundamentally different mental model from everything we built REST con
 
 Traditional API design is not dead overnight. But its importance is shrinking fast. And the painstaking work of defining versioned contracts, negotiating integration points, and documenting endpoints for human developers? Most of that is going away.
 
+> "MCP does not ask you to design a contract. It asks you to expose a capability. The agent decides the rest."
+
 ## Nobody cares about the inside of the box
 
 There is a broader pattern at work here, and it goes beyond protocols. Software is becoming a commodity black box. Increasingly, the question is not how a system is built internally, or what patterns govern its structure. The question is: does it do what we need, is it secure, and is it compliant?
@@ -49,6 +49,8 @@ There is a broader pattern at work here, and it goes beyond protocols. Software 
 That is exactly how we treat infrastructure today. Nobody architecting a cloud solution in 2025 designs the internal workings of a managed Kubernetes service or a hosted message queue. They configure it, connect it, and govern its use. The inside of the box is someone else's problem.
 
 AI-generated architecture diagrams are already exposing the absurdity of the old model. Teams generate diagrams as documentation, nobody maintains them, they drift from reality within weeks, and then they get regenerated. The diagram was never the value. The thinking behind it was. And increasingly, the thinking is being done by the system itself, with humans in the loop as innocent bystanders.
+
+> "The diagram was never the value. The thinking behind it was. And increasingly, the thinking is being done by the system."
 
 ## What actually matters now
 
