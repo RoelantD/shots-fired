@@ -5,6 +5,7 @@ authorSlug: roelant
 date: 2026-04-24
 excerpt: New models drop faster than I can form an opinion about the last one. I work in AI full time. If I cannot keep up, a regular consumer has absolutely no chance. And honestly? That might be fine.
 tags: ai, industry
+category: AI
 ---
 
 Agentic AI is not just changing how software gets built. New models drop faster than I can form an opinion about the last one. I work in AI full time. If I cannot keep up, a regular consumer has absolutely no chance. And honestly? That might be fine.
