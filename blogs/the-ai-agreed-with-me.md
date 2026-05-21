@@ -8,12 +8,6 @@ tags: ai, vibe-coding, developer-tools, judgment
 category: AI
 ---
 
-# The AI Agreed With Me. That Should Scare You.
-
-*A reality check on vibe coding your way into a worse situation*
-
----
-
 We run a user group. Nothing glamorous. We needed a website.
 
 Years ago we landed on Hugo. None of us had used it before. We figured it out, shipped something, it worked. Job done.
@@ -26,7 +20,7 @@ What came back was not Razor Pages. It was a full CMS migration. A different sta
 
 Not better. Just different. And different has a cost.
 
-> "A lateral move dressed up as progress. I would have spent a weekend learning a new tool to end up with something functionally identical to what I already had."
+> "A lateral move dressed up as progress..."
 
 ---
 
@@ -65,7 +59,5 @@ If the answer is no, push back. The AI will fold. That is the point. It is a too
 > "The skill that matters right now is not prompting. It is judgment."
 
 Hugo was fine. The new thing might be fine too. But "fine" is not a reason to migrate. You need an actual reason, and that reason has to be yours.
-
-> "It is a tool that responds to pressure. The pressure has to come from you having an opinion worth pushing with."
 
 Think first. Then prompt.
