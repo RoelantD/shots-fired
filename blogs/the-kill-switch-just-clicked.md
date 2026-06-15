@@ -32,9 +32,9 @@ Both are what Anthropic calls Mythos-class models, the company's most capable sy
 
 > "The underlying capability was not new to US officials. What was new was who had access to it."
 
-Within days of public release, US officials were informed of a possible jailbreak technique. The claim: a method involving code review and vulnerability discovery that could be used to defeat Fable 5's safeguards.
+Within days of public release, US officials were informed of a possible jailbreak technique. The claim: a method involving code review and vulnerability discovery that could be used to defeat Fable 5's safeguards. [CNN reported](https://www.cnn.com/2026/06/13/business/anthropic-mythos-model-national-security) the directive was issued under national security authorities, with officials citing the vulnerability discovery angle specifically.
 
-Anthropic disputes the severity. They call the jailbreak narrow and non-universal. They point out that similar capabilities exist in other publicly accessible frontier models. They say no universal jailbreak was demonstrated. They describe the situation as a misunderstanding.
+[Anthropic disputes the severity](https://www.anthropic.com/news/fable-mythos-access). They call the jailbreak narrow and non-universal. They point out that similar capabilities exist in other publicly accessible frontier models. They say no universal jailbreak was demonstrated. They describe the situation as a misunderstanding.
 
 They are also complying. Because they have to.
 
@@ -98,7 +98,7 @@ But it does make the timeline harder to explain. And it makes "we had no choice"
 
 We do not know the full picture. That is the honest answer.
 
-What we do know is that this was described by multiple outlets as an unprecedented use of export-control powers to take deployed frontier AI models offline. The absence of a playbook is itself the problem.
+What we do know is that [the BBC](https://www.bbc.com/news/articles/c932g3v3e13o), [CNN](https://www.cnn.com/2026/06/13/business/anthropic-mythos-model-national-security), and others have described this as a significant and unprecedented use of export-control powers to take deployed frontier AI models offline. [MarkTechPost called it](https://www.marktechpost.com/2026/06/13/anthropic-disables-claude-fable-5-and-mythos-5-after-us-government-order/) a direct government order with no detailed public justification. Unprecedented means we have no playbook. The absence of one is itself the problem.
 
 ---
 
