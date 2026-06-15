@@ -24,11 +24,11 @@ Because Anthropic cannot reliably identify where its users are from in real-time
 
 Fable 5 had been publicly available for exactly three days. Mythos 5, its more capable underlying counterpart, is a different story.
 
-Before Fable 5 ever reached the public, Mythos 5 had been in the hands of US government agencies for review — thousands of hours of access, in controlled environments, with people whose entire job is to find national security risks in exactly these kinds of systems. Anthropic did not sneak this past anyone. The most capable version of this technology was reviewed, evaluated, and cleared by the very institutions that later issued the shutdown directive.
+Before Fable 5 ever reached the public, Mythos 5 had been in the hands of US government agencies for review, with thousands of hours of access in controlled environments and with people whose entire job is to find national security risks in exactly these kinds of systems. Anthropic did not sneak this past anyone. The most capable version of this technology was reviewed, evaluated, and cleared by the very institutions that later issued the shutdown directive.
 
 Then Fable 5 went public. Three days passed. And the directive arrived.
 
-Both are what Anthropic calls Mythos-class models — the company's most capable systems to date. The underlying capability was not new to US officials. What was new was who had access to it.
+Both are what Anthropic calls Mythos-class models, the company's most capable systems to date. The underlying capability was not new to US officials. What was new was who had access to it.
 
 Within days of public release, US officials were informed of a possible jailbreak technique. The claim: a method involving code review and vulnerability discovery that could be used to defeat Fable 5's safeguards.
 
@@ -86,7 +86,7 @@ But here is what we do know: the agencies that issued the directive had already 
 
 They apparently did not. Or if they did, it was not enough to block the release.
 
-That is the question that does not have a clean answer. Either the jailbreak only became visible at public scale — which is plausible, adversarial testing by millions of users is categorically different from controlled review — or it was knowable during the agency window and missed. Neither option reflects well on the process that led to a global shutdown three days after launch.
+That is the question that does not have a clean answer. Either the jailbreak only became visible at public scale, which is plausible because adversarial testing by millions of users is categorically different from controlled review, or it was knowable during the agency window and missed. Neither option reflects well on the process that led to a global shutdown three days after launch.
 
 Anthropic says the jailbreak is narrow. Anthropic also has an interest in characterising it that way. The government's directive did not include a detailed technical brief. That is frustrating and probably a communication failure. It is also not the same as the government being wrong.
 
@@ -96,9 +96,7 @@ But it does make the timeline harder to explain. And it makes "we had no choice"
 
 We do not know the full picture. That is the honest answer.
 
-What we do know is that this was described by multiple outlets as an unprecedented use of export-control powers to take deployed frontier AI models offline. Unprecedented means we have no playbook. No precedent to point to. No established norms for how this should work, how long it should last, or what "resolved" looks like.
-
-That absence of a playbook is itself the problem.
+What we do know is that this was described by multiple outlets as an unprecedented use of export-control powers to take deployed frontier AI models offline. The absence of a playbook is itself the problem.
 
 ---
 
@@ -107,8 +105,6 @@ That absence of a playbook is itself the problem.
 Anthropic says it is working with US authorities to restore access. No timeline. No public criteria for what resolution looks like. Just "as soon as possible," which tells us nothing.
 
 In the meantime, the rest of the world is watching.
-
-Watching to see how long "temporary" turns out to be. Watching to see whether other governments draw conclusions about their own AI strategies. Watching to see whether this is a one-off or the first of many. Watching to see whether the US government and AI companies can build a working relationship around national security concerns that does not default to global shutdowns every time a hard question arises.
 
 The kill switch just clicked. What matters now is whether anyone uses this moment to build something better than a kill switch.
 
