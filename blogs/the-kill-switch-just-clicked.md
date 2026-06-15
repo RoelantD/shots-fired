@@ -30,6 +30,8 @@ Then Fable 5 went public. Three days passed. And the directive arrived.
 
 Both are what Anthropic calls Mythos-class models, the company's most capable systems to date. The underlying capability was not new to US officials. What was new was who had access to it.
 
+> "The underlying capability was not new to US officials. What was new was who had access to it."
+
 Within days of public release, US officials were informed of a possible jailbreak technique. The claim: a method involving code review and vulnerability discovery that could be used to defeat Fable 5's safeguards.
 
 Anthropic disputes the severity. They call the jailbreak narrow and non-universal. They point out that similar capabilities exist in other publicly accessible frontier models. They say no universal jailbreak was demonstrated. They describe the situation as a misunderstanding.
