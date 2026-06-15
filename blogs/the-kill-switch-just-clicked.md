@@ -10,9 +10,11 @@ category: AI
 
 On June 12, 2026, at approximately 5:21 p.m. Eastern time, Anthropic received a written directive from the US government.
 
+> Suspend access to Fable 5 and Mythos 5 
+
 The instruction was direct: suspend access to Fable 5 and Mythos 5 for all foreign nationals. Immediately.
 
-Because Anthropic cannot reliably identify where its users are from in real time, they did the only thing they could: they pulled both models offline for everyone, worldwide. Not just foreign nationals. Everyone.
+Because Anthropic cannot reliably identify where its users are from in real-time, they did the only thing they could: they pulled both models offline for everyone, worldwide. Not just foreign nationals. Everyone.
 
 > "They pulled both models offline for everyone, worldwide. Not just foreign nationals. Everyone."
 
@@ -20,9 +22,15 @@ Because Anthropic cannot reliably identify where its users are from in real time
 
 ## What happened
 
-Fable 5 had been publicly available for exactly three days. Mythos 5, its more capable underlying counterpart, had been available in more limited contexts for a similar window. Both are what Anthropic calls Mythos-class models — the company's most capable systems to date.
+Fable 5 had been publicly available for exactly three days. Mythos 5, its more capable underlying counterpart, is a different story.
 
-Within days of release, US officials were informed of a possible jailbreak technique. The claim: a method involving code review and vulnerability discovery that could be used to defeat Fable 5's safeguards.
+Before Fable 5 ever reached the public, Mythos 5 had been in the hands of US government agencies for review — thousands of hours of access, in controlled environments, with people whose entire job is to find national security risks in exactly these kinds of systems. Anthropic did not sneak this past anyone. The most capable version of this technology was reviewed, evaluated, and cleared by the very institutions that later issued the shutdown directive.
+
+Then Fable 5 went public. Three days passed. And the directive arrived.
+
+Both are what Anthropic calls Mythos-class models — the company's most capable systems to date. The underlying capability was not new to US officials. What was new was who had access to it.
+
+Within days of public release, US officials were informed of a possible jailbreak technique. The claim: a method involving code review and vulnerability discovery that could be used to defeat Fable 5's safeguards.
 
 Anthropic disputes the severity. They call the jailbreak narrow and non-universal. They point out that similar capabilities exist in other publicly accessible frontier models. They say no universal jailbreak was demonstrated. They describe the situation as a misunderstanding.
 
@@ -58,7 +66,7 @@ Not to patch. Not to restrict specific use cases. Not to apply enhanced monitori
 
 That is a blunt instrument applied to a precision problem.
 
-The reason is partly understandable — Anthropic cannot reliably separate foreign nationals from other users in real time, so global suspension was the only compliant option available. But that limitation itself is a governance failure. If the infrastructure does not support targeted, granular access controls tied to identity and jurisdiction, the only lever available is the big one.
+The reason is partly understandable. Anthropic cannot reliably separate foreign nationals from other users in real time, so global suspension was the only compliant option available. But that limitation itself is a governance failure. If the infrastructure does not support targeted, granular access controls tied to identity and jurisdiction, the only lever available is the big one.
 
 We have been talking about AI governance for years. Mostly in the abstract. This incident is a concrete example of what happens when the models are deployed before the governance architecture is. The answer cannot always be "take it offline."
 
@@ -74,11 +82,19 @@ There is something worth sitting with before we fully commit to outrage.
 
 We do not know what the US government knows.
 
+But here is what we do know: the agencies that issued the directive had already spent thousands of hours with Mythos 5. They were not reviewing a black box. They had access to the most capable version of this technology before the public ever touched Fable 5. Whatever the jailbreak is, their reviewers had every opportunity to find it first.
+
+They apparently did not. Or if they did, it was not enough to block the release.
+
+That is the question that does not have a clean answer. Either the jailbreak only became visible at public scale — which is plausible, adversarial testing by millions of users is categorically different from controlled review — or it was knowable during the agency window and missed. Neither option reflects well on the process that led to a global shutdown three days after launch.
+
 Anthropic says the jailbreak is narrow. Anthropic also has an interest in characterising it that way. The government's directive did not include a detailed technical brief. That is frustrating and probably a communication failure. It is also not the same as the government being wrong.
 
-If there is a genuinely viable technique for using Fable 5 to accelerate software vulnerability discovery at scale, and if that technique was spreading faster than Anthropic's ability to patch it, and if the models were days old and the safety data was accordingly thin — a temporary suspension starts to look less like a panic button and more like a reasonable precaution.
+If there is a genuinely viable technique for using Fable 5 to accelerate software vulnerability discovery at scale, and if that technique was spreading faster than Anthropic's ability to patch it, a temporary suspension might still be a reasonable precaution. The prior review window does not make the threat imaginary.
 
-We do not know. That is the honest answer.
+But it does make the timeline harder to explain. And it makes "we had no choice" harder to accept at face value.
+
+We do not know the full picture. That is the honest answer.
 
 What we do know is that this was described by multiple outlets as an unprecedented use of export-control powers to take deployed frontier AI models offline. Unprecedented means we have no playbook. No precedent to point to. No established norms for how this should work, how long it should last, or what "resolved" looks like.
 
