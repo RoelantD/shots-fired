@@ -17,7 +17,9 @@
       "Bash(sed -i 's/^tags: ai, engineering, software development$/tags: ai, engineering, software development\\\\ncategory: AI/' blogs/the-more-things-change.md)",
       "Bash(sed -i 's/^tags: azure, foundry, ai, agents$/tags: azure, foundry, ai, agents\\\\ncategory: FinOps/' blogs/your-finops-tooling-has-no-idea.md)",
       "Bash(sed -i 's/^tags: cloud, architecture, azure$/tags: cloud, architecture, azure\\\\ncategory: General/' blogs/cloud-is-just-someones-computer.md)",
-      "Bash(sed -i 's/^tags: azure, certification, ai, az-204, ai-102$/tags: azure, certification, ai, az-204, ai-102\\\\ncategory: AI/' blogs/microsoft-just-rewrote-the-azure-developer-playbook.md)"
+      "Bash(sed -i 's/^tags: azure, certification, ai, az-204, ai-102$/tags: azure, certification, ai, az-204, ai-102\\\\ncategory: AI/' blogs/microsoft-just-rewrote-the-azure-developer-playbook.md)",
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget"
     ]
   }
 }
